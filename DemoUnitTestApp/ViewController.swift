@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         volume = min(max(value, 0), 100)
     }
     
-    func CompareChars(wordOne: String, wordTwo: String) -> Bool {
+    func compareChars(wordOne: String, wordTwo: String) -> Bool {
         return Set(wordOne) == Set(wordTwo)
     }
 

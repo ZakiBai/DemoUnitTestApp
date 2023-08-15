@@ -24,10 +24,36 @@ final class DemoUnitTestAppTests: XCTestCase {
     }
 
     func testHighestVolumeShouldBe100() {
-        sut.setVolume(value: 100)
+        sut.setVolume(value: 200)
         let volume = sut.volume
         
         XCTAssert(volume == 100, "Max volume should be 100")
+    }
+    
+    func testLowesVolumeShouldBeZero() {
+        sut.setVolume(value: -12)
+        let volume = sut.volume
+        
+        XCTAssert(volume == 0, "Min volume should be 0")
+    }
+    
+    func testCharsInStringShouldBeTheSame() {
+        let wordOne = "qwerty"
+        let wordTwo = "ytrewq"
+        
+        let compare = sut.compareChars(wordOne: wordOne, wordTwo: wordTwo)
+        
+        XCTAssert(compare, "Chars in string should be equal")
+    }
+    
+    func testCharsInStringShouldBeDifferent() {
+        let wordOne = "qwerty1"
+        let wordTwo = "ytrewq"
+        
+        let compare = sut.compareChars(wordOne: wordOne, wordTwo: wordTwo)
+        
+        XCTAssert(!compare, "Chars in string should be different")
+        
     }
 
 }
