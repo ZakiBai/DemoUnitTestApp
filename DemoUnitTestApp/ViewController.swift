@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var volume = 0
+    private(set) var volume = 0
     
-    func setVolume(volume: Int) -> Int {
-        return min(max(volume, 0), 100)
+    func setVolume(value: Int) {
+        volume = min(max(value, 0), 100)
     }
     
     func CompareChars(wordOne: String, wordTwo: String) -> Bool {
